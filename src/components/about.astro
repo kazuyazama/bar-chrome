@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import aboutImage from "../assets/cherry-laithang-EyUrlifbgv4-unsplash.jpg";
+import SectionTitle from "../components/SectionTitle.astro";
+---
+
+<section class="bg-secondary p-6">
+  <div class="relative flex justify-between">
+    <div class="">
+      <SectionTitle class="absolute left-0 top-0 text-accent/30">
+        About Us
+      </SectionTitle>
+    </div>
+    <Image
+      src={aboutImage}
+      alt="aboutImage"
+      format="webp"
+      class="aspect-square h-[400px] w-1/2"
+    />
+  </div>
+
+  <article class="p-6">
+    <h3 class="text-5xl font-bold">カジュアルにいける町田の隠れバー</h3>
+
+    <span
+      class="divider before:border-2  before:border-accent after:border-2 after:border-accent"
+    ></span>
+
+    <p class="text-lg leading-9">
+      Bar Choromeは大人で落ち着いた雰囲気の町田のバーです！<br />
+      ボックス席もございますので、仲の良い仲間同士でも楽しくお酒が飲めます！<br
+      />
+      外から見ると一見狭そうに見えますが、意外と店内広いので、貸切にも最適です！
+    </p>
+  </article>
+</section>

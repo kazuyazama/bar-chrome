@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import Counnter from "../assets/Frame 69 (1).png";
+import Entrance from "../assets/Frame 56.png";
+import SectionTitle from "./SectionTitle.astro";
+import Divider from "./Divider.astro";
+import FloorCard from "./FloorCard.astro";
+const rawHTMLString =
+  "カウンターこんな感じですよーとか店内 <br />のイメージが伝わるようにする";
+---
+
+<div class="bg-primary py-6">
+  <SectionTitle class="flex justify-end text-accent/30">Floor</SectionTitle>
+  <div class="relative">
+    <Image src={Counnter} alt="counteImage" width={954} height={555} class="" />
+    <div class="absolute bottom-20 right-32 bg-white/50 p-6">
+      <h3 class="z-10 text-6xl">Counter</h3>
+      <Divider class="z-10 mt-0" />
+      <p class="z-10 text-2xl">
+        カウンターこんな感じですよーとか店内の<br />
+        イメージが伝わるようにする
+      </p>
+    </div>
+  </div>
+
+  <div class="relative">
+    <Image
+      src={Entrance}
+      alt="entranceImage"
+      width={954}
+      height={555}
+      class=""
+    />
+    <FloorCard title="Entrance" >
+      カウンターこんな感じですよーとか店内 <br />のイメージが伝わるようにする
+    </FloorCard>
+  </div>
+</div>

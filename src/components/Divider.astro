@@ -1,0 +1,12 @@
+---
+const { class: className } = Astro.props;
+type Props = {
+  class: string;
+};
+---
+
+<span
+  class:list={[
+    className,
+    "divider before:border-2  before:border-accent after:border-2 after:border-accent",
+  ]}></span>
