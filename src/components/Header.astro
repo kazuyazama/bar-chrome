@@ -1,8 +1,12 @@
+---
+const navItems = ["Home", "About Us", "Floor", "Menu", "Access","Gallary"];
+---
+
 <div class="drawer">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
-    <div class="navbar h-full w-full bg-primary p-0 ">
+    <nav class="navbar h-full w-full p-0">
       <div class="flex-none lg:hidden">
         <label for="my-drawer-3" class="btn-ghost btn-square btn">
           <svg
@@ -18,29 +22,37 @@
           >
         </label>
       </div>
-      <h1 class="mx-2 flex-1 px-2">Bar chrome</h1>
+      <h1 class="ml-6 flex-1 font-montserrat text-2xl text-neutral">
+        Bar chrome
+      </h1>
       <div class="hidden h-full lg:block">
-        <div class="flex h-full gap-40">
-          <ul class="menu menu-horizontal flex gap-3 text-center text-neutral">
-            <!-- Navbar menu content here -->
-            <li class="w-28 border-b border-neutral">
-              <a href="#aiu" class="">Navbar Item 1</a>
-            </li>
-            <li class="h-full w-28"><a>Navbar Item 1</a></li>
-            <li class="h-full w-28"><a>Navbar Item 2</a></li>
-            <li class="h-full w-28"><a>Navbar Item 3</a></li>
-            <li class="h-full w-28"><a>Navbar Item 4</a></li>
+        <div class="flex h-full gap-16">
+          <ul
+            class="my-auto flex gap-3 text-center font-montserrat text-neutral"
+          >
+            {
+              navItems.map((nav) => (
+                <li class=" px-7 border-b border-neutral pb-0.5">
+                  <a href={`#${nav}`} class="">
+                    {nav}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
 
-          <div class="my-auto flex h-full w-[406px] bg-secondary p-3">
-            <button class="">ボタン</button>
+          <div class="my-auto flex h-full bg-accent px-6 text-white">
+            <dl class="flex items-center gap-4">
+              <dt>ご予約・お問い合わせ</dt>
+              <dd class="font-montserrat text-2xl">070-4419-3000</dd>
+            </dl>
           </div>
         </div>
       </div>
-    </div>
+    </nav>
     <!-- Page content here -->
   </div>
-  <div class="drawer-side opacity-100">
+  <div class="drawer-side z-[100] opacity-100">
     <label for="my-drawer-3" class="drawer-overlay"></label>
     <ul class="h-full w-80 rounded-none bg-base-200 p-4">
       <!-- Sidebar content here -->

@@ -1,14 +1,14 @@
 ---
-import type { SlotHTMLAttributes } from "react";
 import Divider from "./Divider.astro";
-const { title } = Astro.props;
+const { title, class: clasName } = Astro.props;
 
 type Props = {
   title: string;
+  class: string;
 } & astroHTML.JSX.SlotHTMLAttributes;
 ---
 
-<div class="absolute bottom-20 right-32 bg-white/50 p-6">
+<div class:list={[clasName, "absolute bottom-20 bg-white/50 p-6"]}>
   <h3 class="z-10 text-6xl">{title}</h3>
   <Divider class="z-10 mt-0" />
   <p class="z-10 text-2xl">

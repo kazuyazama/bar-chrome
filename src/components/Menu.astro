@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import whiskeyImage from "../assets/Frame 109.png";
+import cocketailImage from "../assets/Frame 109 (1).png";
+import wineImage from "../assets/Frame 109 (2).png";
+import foodImage from "../assets/Frame 109 (3).png";
+import Divider from "./Divider.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section class="grid gap-20" id="Menu" >
+  <SectionTitle class="flex justify-start pl-6 pt-16 text-accent/30">
+    Menu
+  </SectionTitle>
+
+  <figure class="flex gap-3 bg-secondary shadow-none">
+    <figcaption class="basis-2/3 p-6">
+      <h2 class="text-6xl">Whiskey</h2>
+      <Divider class="mb-0" />
+      <ul>
+        {
+          new Array(4).fill(null).map((_, i) => (
+            <li class="w-full border-b border-accent py-4">
+              <dl class="flex w-full items-center justify-between">
+                <dt>menu{i + 1}</dt>
+                <dd>￥1,200</dd>
+              </dl>
+            </li>
+          ))
+        }
+      </ul>
+    </figcaption>
+
+    <Image src={whiskeyImage} width={600} alt="whiskeyImage" />
+  </figure>
+
+  <figure class="flex gap-3 bg-secondary shadow-none">
+    <Image src={cocketailImage} width={600} alt="whiskeyImage" />
+    <figcaption class="basis-2/3 p-6">
+      <h2 class="text-6xl">Cocktail</h2>
+      <Divider class="mb-0" />
+      <ul>
+        {
+          new Array(4).fill(null).map((_, i) => (
+            <li class="w-full border-b border-accent py-4">
+              <dl class="flex w-full items-center justify-between">
+                <dt>menu{i + 1}</dt>
+                <dd>￥1,200</dd>
+              </dl>
+            </li>
+          ))
+        }
+      </ul>
+    </figcaption>
+  </figure>
+
+  <figure class="flex gap-3 bg-secondary shadow-none">
+    <figcaption class="basis-2/3 p-6">
+      <h2 class="text-6xl">Wine</h2>
+      <Divider class="mb-0" />
+      <ul>
+        {
+          new Array(4).fill(null).map((_, i) => (
+            <li class="w-full border-b border-accent py-4">
+              <dl class="flex w-full items-center justify-between">
+                <dt>menu{i + 1}</dt>
+                <dd>￥1,200</dd>
+              </dl>
+            </li>
+          ))
+        }
+      </ul>
+    </figcaption>
+
+    <Image src={wineImage} width={600} alt="whiskeyImage" />
+  </figure>
+
+  <figure class="flex gap-3 bg-secondary shadow-none">
+    <Image src={foodImage} width={600} alt="whiskeyImage" />
+    <figcaption class="basis-2/3 p-6">
+      <h2 class="text-6xl">Food</h2>
+      <Divider class="mb-0" />
+      <p class="py-4 text-xl">無料のおつまみ多数用意してます！</p>
+    </figcaption>
+  </figure>
+</section>

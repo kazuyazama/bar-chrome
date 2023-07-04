@@ -6,7 +6,11 @@ module.exports = {
 		"roboto":["Roboto Flex Variable", "sans-serif"],
 		"montserrat":["montserrat Variable","sans-serif"]
 	},
-    extend: {},
+    extend: {
+      backgroundImage:{
+        "access-image":"url('src/assets/Frame 116.png')"
+      }
+    },
   },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
