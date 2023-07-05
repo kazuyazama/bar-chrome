@@ -8,7 +8,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "access-image": "url('src/assets/Frame 116.png')",
+        "access-image": "url('/src/assets/Frame116.png')",
       },
       keyframes: {
         pathmove: {
