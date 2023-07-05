@@ -8,7 +8,12 @@ type Props = {
 } & astroHTML.JSX.SlotHTMLAttributes;
 ---
 
-<div class:list={[clasName, "absolute  -bottom-[108px] lg:bottom-20 bg-white/50 p-6"]}>
+<div
+  class:list={[
+    clasName,
+    "absolute  -bottom-[108px] lg:bottom-20 bg-white/50 p-6",
+  ]}
+>
   <h3 class="z-10 text-2xl lg:text-6xl">{title}</h3>
   <Divider class="z-10 -mt-1 mb-2 lg:mb-4 lg:mt-0" />
   <p class="z-10 lg:text-2xl">
