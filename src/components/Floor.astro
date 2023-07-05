@@ -11,8 +11,8 @@ import FloorCard from "./FloorCard.astro";
     Floor
   </SectionTitle>
 
-  <div class="grid gap-20">
-    <div class="relative flex justify-start">
+  <div class="grid gap-40 lg:gap-20">
+    <div class="relative flex flex-col justify-start lg:flex-row">
       <Image
         src={Counnter}
         alt="counteImage"
@@ -20,12 +20,12 @@ import FloorCard from "./FloorCard.astro";
         height={555}
         class=""
       />
-      <FloorCard title="Counter" class="right-32">
+      <FloorCard title="Counter" class="right-0 lg:right-32">
         カウンターこんな感じですよーとか店内 <br />のイメージが伝わるようにする
       </FloorCard>
     </div>
 
-    <div class="relative flex justify-end">
+    <div class="relative flex flex-col justify-end lg:flex-row">
       <Image
         src={Entrance}
         alt="entranceImage"
@@ -33,7 +33,7 @@ import FloorCard from "./FloorCard.astro";
         height={555}
         class=""
       />
-      <FloorCard title="Entrance" class="left-32">
+      <FloorCard title="Entrance" class="left-0 lg:left-32">
         カウンターこんな感じですよーとか店内 <br />のイメージが伝わるようにする
       </FloorCard>
     </div>

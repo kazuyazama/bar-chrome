@@ -20,7 +20,7 @@ const shopDatas = [
   },
   {
     dt: "その他",
-    dd: "予約可（1名様から）、貸し切り可、全席喫煙可",
+    dd: "予約可（1名様から）、貸し切り可、\n全席喫煙可",
   },
   {
     dt: "アクセス",
@@ -29,18 +29,18 @@ const shopDatas = [
 ];
 ---
 
-<section class=" pt-24 pb-32" id="Access">
+<section class=" py-24  " id="Access">
   <SectionTitle class="flex justify-end pb-16 pr-6 text-accent/30">
     Access
   </SectionTitle>
 
-  <div class="hero h-[500px] bg-access-image">
+  <div class="hero bg-access-image lg:h-[500px]">
     <div class="hero-overlay bg-opacity-30"></div>
     <div
-      class="grid h-full w-full grid-cols-2 justify-between gap-20 px-6 py-10 text-white"
+      class="grid h-full w-full justify-between gap-6 px-6 py-6 text-white lg:grid-cols-2 lg:gap-20 lg:py-10"
     >
       <div class="flex h-full flex-col">
-        <div class="flex-1 pt-10">
+        <div class="flex-1 lg:pt-10">
           <dl class="grid gap-4">
             <dt class="font-montserrat text-2xl">
               Bar Chrome（バー クローム）
@@ -49,7 +49,7 @@ const shopDatas = [
           </dl>
         </div>
         <div
-          class="grid w-full flex-none place-items-center bg-white/60 p-6 text-center text-black"
+          class="mt-6 grid w-full flex-none place-items-center bg-white/60 p-6 text-center text-black lg:mt-0"
         >
           <dl class="grid gap-7">
             <dt class="text-xl">ご予約・お問い合わせ</dt>
@@ -63,9 +63,11 @@ const shopDatas = [
           {
             shopDatas.map((shop) => (
               <li class="  border-b border-accent py-4 first:border-t">
-                <dl class="flex items-center gap-5">
-                  <dt class=" w-24 text-center  ">{shop.dt}</dt>
-                  <dd>{shop.dd}</dd>
+                <dl class="flex flex-col items-start gap-2 lg:flex-row  lg:items-center lg:gap-5">
+                  <dt class=" w-24 text-start lg:text-center">{shop.dt}</dt>
+                  <dd class=" whitespace-pre-line lg:whitespace-normal">
+                    {shop.dd}
+                  </dd>
                 </dl>
               </li>
             ))
@@ -75,16 +77,16 @@ const shopDatas = [
     </div>
   </div>
 
-  <div class=" pt-20">
-    <figure class="mx-auto flex w-[1200px] flex-col items-center gap-6">
+  <div class="px-6 pt-20 lg:px-0">
+    <figure class="mx-auto flex flex-col items-center gap-6 lg:w-[1200px]">
       <figcaption class="self-start font-montserrat text-2xl">
         GoogleMap
       </figcaption>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12986.210662210013!2d139.4510572!3d35.5400507!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f935ef875ea9%3A0x8fd1f54c56c767c!2sBar%20Chrome!5e0!3m2!1sja!2sjp!4v1688465118804!5m2!1sja!2sjp"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.5524899741863!2d139.44848227641228!3d35.54005503771531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f935ef875ea9%3A0x8fd1f54c56c767c!2sBar%20Chrome!5e0!3m2!1sja!2sjp!4v1688550675807!5m2!1sja!2sjp"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        class="h-[600px] w-full"></iframe>
+        class="h-80 w-full lg:block lg:h-[600px]"></iframe>
     </figure>
   </div>
 </section>
