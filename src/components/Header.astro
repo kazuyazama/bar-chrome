@@ -1,40 +1,57 @@
 ---
-const navItems = ["Home", "About Us", "Floor", "Menu", "Access","Gallary"];
+const navItems = ["Home", "About", "Floor", "Menu", "Access", "Gallary"];
+import { Icon } from "astro-icon";
 ---
 
-<div class="drawer">
+<script>
+  //navItemsをクリックしたら、ドロワーが閉じる実装
+
+  const hamburgerButton = document.getElementById("hamburgerButton");
+  const drawerMenu = document.getElementById("my-drawer-3") as HTMLInputElement; //ドロワー本体
+  const liNavItems = document.querySelectorAll(
+    "#liItem"
+  ) as NodeListOf<HTMLLIElement>; //navItems
+
+  hamburgerButton?.addEventListener("click", function () {
+    if (drawerMenu.checked) {
+      drawerMenu.checked = false;
+    }
+  });
+
+  liNavItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      drawerMenu.checked = false;
+    });
+  });
+</script>
+
+<div class="drawer" id="Home">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
     <nav class="navbar h-full w-full p-0">
-      <div class="flex-none lg:hidden">
-        <label for="my-drawer-3" class="btn-ghost btn-square btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            class="inline-block h-6 w-6 stroke-current"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path></svg
-          >
-        </label>
-      </div>
       <h1 class="ml-6 flex-1 font-montserrat text-2xl text-neutral">
         Bar chrome
       </h1>
+
+      <div class="h-full flex-none bg-secondary lg:hidden">
+        <label for="my-drawer-3" class="btn-ghost btn" id="hamburgerButton">
+          <Icon
+            name="charm:menu-hamburger"
+            class="inline-block h-6 w-6 stroke-current"
+          />
+        </label>
+      </div>
       <div class="hidden h-full lg:block">
         <div class="flex h-full gap-16">
           <ul
             class="my-auto flex gap-3 text-center font-montserrat text-neutral"
           >
             {
-              navItems.map((nav) => (
-                <li class=" px-7 border-b border-neutral pb-0.5">
-                  <a href={`#${nav}`} class="">
-                    {nav}
+              navItems.map((item) => (
+                <li class=" border-b border-neutral px-7 pb-0.5">
+                  <a href={`#${item}`} class="">
+                    {item}
                   </a>
                 </li>
               ))
@@ -54,10 +71,21 @@ const navItems = ["Home", "About Us", "Floor", "Menu", "Access","Gallary"];
   </div>
   <div class="drawer-side z-[100] opacity-100">
     <label for="my-drawer-3" class="drawer-overlay"></label>
-    <ul class="h-full w-80 rounded-none bg-base-200 p-4">
-      <!-- Sidebar content here -->
-      <li class="py-3 hover:bg-primary"><a>Sidebar Item 1</a></li>
-      <li class="py-3 hover:bg-primary"><a>Sidebar Item 2</a></li>
-    </ul>
+    <div class="h-full w-80 rounded-none bg-primary p-4 text-center">
+      <h2 class="pb-6 font-montserrat text-2xl">Bar Chrome</h2>
+      <ul
+        class="my-auto flex flex-col gap-6 text-center font-montserrat text-neutral"
+      >
+        {
+          navItems.map((item) => (
+            <li class=" border-b border-neutral px-7 pb-0.5" id="liItem">
+              <a class=" h-full w-full" href={`#${item}`}>
+                {item}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 </div>
