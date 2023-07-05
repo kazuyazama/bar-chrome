@@ -51,7 +51,10 @@ import { Icon } from "astro-icon";
             {
               navItems.map((item) => (
                 <li class=" relative my-auto h-full w-full  pb-1 after:absolute after:bottom-0 after:left-0 after:h-[5px] after:w-full after:scale-x-[0.04] after:scale-y-100 after:rounded-[50%]  after:bg-neutral after:transition-all after:duration-300 after:hover:h-[2px] after:hover:scale-x-90 after:hover:scale-y-100 after:hover:rounded-none ">
-                  <a href={`#${item}`} class=" h-full w-full px-7 ">
+                  <a
+                    href={`#${item}`}
+                    class=" inline-block h-full w-full px-7 "
+                  >
                     {item}
                   </a>
                 </li>
@@ -79,8 +82,8 @@ import { Icon } from "astro-icon";
       >
         {
           navItems.map((item) => (
-            <li class=" border-b border-neutral px-7 pb-0.5" id="liItem">
-              <a class=" h-full w-full" href={`#${item}`}>
+            <li class=" w-full border-b border-neutral pb-0.5" id="liItem">
+              <a class=" inline-block h-full w-full " href={`#${item}`}>
                 {item}
               </a>
             </li>
