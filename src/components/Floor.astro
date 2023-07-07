@@ -7,35 +7,39 @@ import { Picture } from "@astrojs/image/components";
 ---
 
 <section class="pb-16 pt-24" id="Floor">
-  <SectionTitle class="flex justify-end pb-16 pr-6 text-accent/30">
-    Floor
-  </SectionTitle>
+  <div class="mx-auto max-w-screen-2xl">
+    <SectionTitle class="flex justify-end pb-16 pr-6 text-accent/30">
+      Floor
+    </SectionTitle>
 
-  <div class="grid gap-40 lg:gap-20">
-    <div class="relative flex flex-col justify-start lg:flex-row">
-      <Picture
-        src={Counnter}
-        aspectRatio="16:9"
-        widths={[200, 400, 800]}
-        sizes="(max-width: 800px) 100vw, 800px"
-        alt="counterImage"
-      />
-      <FloorCard title="Counter" class="right-0 lg:right-32">
-        カウンターこんな感じですよーとか店内 <br />のイメージが伝わるようにする
-      </FloorCard>
-    </div>
+    <div class="grid gap-40 lg:gap-20">
+      <div class="relative flex flex-col justify-start lg:flex-row">
+        <Picture
+          src={Counnter}
+          aspectRatio="16:9"
+          widths={[200, 400, 800]}
+          sizes="(max-width: 1024px) 100vw ,1000px"
+          alt="counterImage"
+        />
+        <FloorCard title="Counter" class="right-0 lg:right-32">
+          カウンターこんな感じですよーとか店内 <br
+          />のイメージが伝わるようにする
+        </FloorCard>
+      </div>
 
-    <div class="relative flex flex-col justify-end lg:flex-row">
-      <Picture
-        src={Entrance}
-        aspectRatio="16:9"
-        widths={[200, 400, 800]}
-        sizes="(max-width: 800px) 100vw, 800px"
-        alt="entranceImage"
-      />
-      <FloorCard title="Entrance" class="left-0 lg:left-32">
-        カウンターこんな感じですよーとか店内 <br />のイメージが伝わるようにする
-      </FloorCard>
+      <div class="relative flex flex-col justify-end lg:flex-row">
+        <Picture
+          src={Entrance}
+          aspectRatio="16:9"
+          widths={[200, 400, 800]}
+          sizes="(max-width: 1024px) 100vw ,1000px"
+          alt="entranceImage"
+        />
+        <FloorCard title="Entrance" class="left-0 lg:left-32">
+          カウンターこんな感じですよーとか店内 <br
+          />のイメージが伝わるようにする
+        </FloorCard>
+      </div>
     </div>
   </div>
 </section>

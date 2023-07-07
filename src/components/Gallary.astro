@@ -1,78 +1,80 @@
 ---
+import { Picture } from "@astrojs/image/components";
 import SectionTitle from "./SectionTitle.astro";
 import gallaryImage from "../assets/Frame 109 (1).png";
-import { Picture } from "@astrojs/image/components";
 ---
 
 <section class="bg-secondary px-6 py-24" id="Gallary">
-  <SectionTitle class="flex justify-start pb-16 text-accent/30">
-    Gallary
-  </SectionTitle>
+  <div class="mx-auto max-w-screen-2xl">
+    <SectionTitle class="flex justify-start pb-16 text-accent/30">
+      Gallary
+    </SectionTitle>
 
-  <div>
-    <div class="carousel rounded-box">
-      <div class="carousel-item">
-        <Picture
-          src={gallaryImage}
-          aspectRatio="1:1"
-          widths={[100, 300, 500]}
-          sizes="(max-width: 1280px) 100vw, 500px"
-          alt="descriptive text"
-        />
-      </div>
-      <div class="carousel-item">
-        <Picture
-          src={gallaryImage}
-          aspectRatio="1:1"
-          widths={[100, 300, 500]}
-          sizes="(max-width: 1280px) 100vw, 500px"
-          alt="descriptive text"
-        />
-      </div>
-      <div class="carousel-item">
-        <Picture
-          src={gallaryImage}
-          aspectRatio="1:1"
-          widths={[100, 300, 500]}
-          sizes="(max-width: 1280px) 100vw, 500px"
-          alt="descriptive text"
-        />
-      </div>
-      <div class="carousel-item">
-        <Picture
-          src={gallaryImage}
-          aspectRatio="1:1"
-          widths={[100, 300, 500]}
-          sizes="(max-width: 1280px) 100vw, 500px"
-          alt="descriptive text"
-        />
-      </div>
-      <div class="carousel-item">
-        <Picture
-          src={gallaryImage}
-          aspectRatio="1:1"
-          widths={[100, 300, 500]}
-          sizes="(max-width: 1280px) 100vw, 500px"
-          alt="descriptive text"
-        />
-      </div>
-      <div class="carousel-item">
-        <Picture
-          src={gallaryImage}
-          aspectRatio="1:1"
-          widths={[100, 300, 500]}
-          sizes="(max-width: 1280px) 100vw, 500px"
-          alt="descriptive text"
-        />
-      </div>
-      <div class="carousel-item">
-        <Picture
-          src={gallaryImage}
-          aspectRatio="1:1"
-          widths={[100, 300, 500]}
-          sizes="(max-width: 1280px) 100vw, 500px"
-          alt="descriptive text"
-        />
+    <div>
+      <div class="carousel rounded-box">
+        <div class="carousel-item">
+          <Picture
+            src={gallaryImage}
+            aspectRatio="1:1"
+            widths={[100, 300, 500]}
+            sizes="(max-width: 1024px) 100vw, 500px"
+            alt="descriptive text"
+          />
+        </div>
+        <div class="carousel-item">
+          <Picture
+            src={gallaryImage}
+            aspectRatio="1:1"
+            widths={[100, 300, 500]}
+            sizes="(max-width: 1024px) 100vw, 500px"
+            alt="descriptive text"
+          />
+        </div>
+        <div class="carousel-item">
+          <Picture
+            src={gallaryImage}
+            aspectRatio="1:1"
+            widths={[100, 300, 500]}
+            sizes="(max-width: 1024px) 100vw, 500px"
+            alt="descriptive text"
+          />
+        </div>
+        <div class="carousel-item">
+          <Picture
+            src={gallaryImage}
+            aspectRatio="1:1"
+            widths={[100, 300, 500]}
+            sizes="(max-width: 1024px) 100vw, 500px"
+            alt="descriptive text"
+          />
+        </div>
+        <div class="carousel-item">
+          <Picture
+            src={gallaryImage}
+            aspectRatio="1:1"
+            widths={[100, 300, 500]}
+            sizes="(max-width: 1024px) 100vw, 500px"
+            alt="descriptive text"
+          />
+        </div>
+        <div class="carousel-item">
+          <Picture
+            src={gallaryImage}
+            aspectRatio="1:1"
+            widths={[100, 300, 500]}
+            sizes="(max-width: 1024px) 100vw, 500px"
+            alt="descriptive text"
+          />
+        </div>
+        <div class="carousel-item">
+          <Picture
+            src={gallaryImage}
+            aspectRatio="1:1"
+            widths={[100, 300, 500]}
+            sizes="(max-width: 1024px) 100vw, 500px"
+            alt="descriptive text"
+          />
+        </div>
       </div>
     </div>
   </div>

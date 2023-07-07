@@ -6,13 +6,17 @@ import MenuCard from "./MenuCard.astro";
 import SectionTitle from "./SectionTitle.astro";
 ---
 
-<section class="grid -scroll-my-10 gap-10 pt-24 lg:gap-20" id="Menu">
-  <SectionTitle class="flex justify-start pl-6 text-accent/30">
-    Menu
-  </SectionTitle>
+<section class="" id="Menu">
+  <div class="mx-auto max-w-screen-2xl">
+    <div class="grid -scroll-my-10 gap-10 pt-24 lg:gap-20">
+      <SectionTitle class="flex justify-start pl-6 text-accent/30">
+        Menu
+      </SectionTitle>
 
-  <MenuCard menuImage={whiskeyImage} order title="Whiskey" />
-  <MenuCard menuImage={cocketailImage} title="Cocktail" />
-  <MenuCard menuImage={cocketailImage} order title="Wine" />
-  <MenuCard menuImage={foodImage} notMenu title="Food" />
+      <MenuCard menuImage={whiskeyImage} order title="Whiskey" />
+      <MenuCard menuImage={cocketailImage} title="Cocktail" />
+      <MenuCard menuImage={cocketailImage} order title="Wine" />
+      <MenuCard menuImage={foodImage} notMenu title="Food" />
+    </div>
+  </div>
 </section>
