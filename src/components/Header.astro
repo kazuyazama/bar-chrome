@@ -30,7 +30,6 @@ import { Icon } from "astro-icon";
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
     <nav class="navbar h-full w-full p-0">
-      
       <h1 class="ml-6 flex-1 font-montserrat text-2xl text-neutral">
         <a href="#Home">Bar chrome</a>
       </h1>
@@ -81,14 +80,16 @@ import { Icon } from "astro-icon";
   <div class="drawer-side z-[100] opacity-100">
     <label for="my-drawer-3" class="drawer-overlay"></label>
     <div class="h-full w-80 rounded-none bg-primary p-4 text-center">
-      <h2 class="pb-6 font-montserrat text-2xl">Bar Chrome</h2>
+      <a href="#Home">
+        <h2 class="pb-6 font-montserrat text-2xl">Bar Chrome</h2>
+      </a>
       <ul
-        class="my-auto flex flex-col gap-6 text-center font-montserrat text-neutral"
+        class="my-auto flex flex-col text-center font-montserrat text-neutral"
       >
         {
           navItems.map((item) => (
             <li class=" w-full border-b border-neutral pb-0.5" id="liItem">
-              <a class=" inline-block h-full w-full " href={`#${item}`}>
+              <a class=" inline-block h-full w-full py-3 text-xl " href={`#${item}`}>
                 {item}
               </a>
             </li>
