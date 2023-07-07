@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import aboutImage from "../assets/cherry-laithang-EyUrlifbgv4-unsplash.jpg";
-import SectionTitle from "../components/SectionTitle.astro";
+import SectionTitle from "./SectionTitle.astro";
+import { Picture } from "@astrojs/image/components";
 ---
 
 <section class="bg-secondary px-6 py-12 lg:py-24" id="About">
@@ -14,12 +15,21 @@ import SectionTitle from "../components/SectionTitle.astro";
       </SectionTitle>
     </div>
 
-    <Image
+    <Picture
+      src={aboutImage}
+      aspectRatio="16:9"
+      widths={[100, 300, 500]}
+      sizes="(max-width: 1280px) 100vw, 800px"
+      alt="descriptive text"
+    />
+
+    <!-- <Image
       src={aboutImage}
       alt="aboutImage"
-      format="webp"
+      width={1280}
+      height={720}
       class="-mx-6 aspect-square h-[200px] self-end lg:mx-0 lg:h-[400px] lg:w-1/2 lg:self-auto"
-    />
+    /> -->
   </div>
 
   <div class="px-6 pt-12">

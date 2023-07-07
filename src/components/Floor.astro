@@ -1,9 +1,9 @@
 ---
-import { Image } from "astro:assets";
 import Counnter from "../assets/Frame 69 (1).png";
 import Entrance from "../assets/Frame 56.png";
 import SectionTitle from "./SectionTitle.astro";
 import FloorCard from "./FloorCard.astro";
+import { Picture } from "@astrojs/image/components";
 ---
 
 <section class="pb-16 pt-24" id="Floor">
@@ -13,12 +13,12 @@ import FloorCard from "./FloorCard.astro";
 
   <div class="grid gap-40 lg:gap-20">
     <div class="relative flex flex-col justify-start lg:flex-row">
-      <Image
+      <Picture
         src={Counnter}
-        alt="counteImage"
-        width={954}
-        height={555}
-        class=""
+        aspectRatio="16:9"
+        widths={[200, 400, 800]}
+        sizes="(max-width: 800px) 100vw, 800px"
+        alt="counterImage"
       />
       <FloorCard title="Counter" class="right-0 lg:right-32">
         カウンターこんな感じですよーとか店内 <br />のイメージが伝わるようにする
@@ -26,12 +26,12 @@ import FloorCard from "./FloorCard.astro";
     </div>
 
     <div class="relative flex flex-col justify-end lg:flex-row">
-      <Image
+      <Picture
         src={Entrance}
+        aspectRatio="16:9"
+        widths={[200, 400, 800]}
+        sizes="(max-width: 800px) 100vw, 800px"
         alt="entranceImage"
-        width={954}
-        height={555}
-        class=""
       />
       <FloorCard title="Entrance" class="left-0 lg:left-32">
         カウンターこんな感じですよーとか店内 <br />のイメージが伝わるようにする

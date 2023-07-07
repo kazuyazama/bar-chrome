@@ -1,7 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import SectionTitle from "./SectionTitle.astro";
 import gallaryImage from "../assets/Frame 109 (1).png";
+import { Picture } from "@astrojs/image/components";
 ---
 
 <section class="bg-secondary px-6 py-24" id="Gallary">
@@ -12,25 +12,67 @@ import gallaryImage from "../assets/Frame 109 (1).png";
   <div>
     <div class="carousel rounded-box">
       <div class="carousel-item">
-        <Image src={gallaryImage} alt="Burger" width={600} />
+        <Picture
+          src={gallaryImage}
+          aspectRatio="1:1"
+          widths={[100, 300, 500]}
+          sizes="(max-width: 1280px) 100vw, 500px"
+          alt="descriptive text"
+        />
       </div>
       <div class="carousel-item">
-        <Image src={gallaryImage} alt="Burger" width={600} />
+        <Picture
+          src={gallaryImage}
+          aspectRatio="1:1"
+          widths={[100, 300, 500]}
+          sizes="(max-width: 1280px) 100vw, 500px"
+          alt="descriptive text"
+        />
       </div>
       <div class="carousel-item">
-        <Image src={gallaryImage} alt="Burger" width={600} />
+        <Picture
+          src={gallaryImage}
+          aspectRatio="1:1"
+          widths={[100, 300, 500]}
+          sizes="(max-width: 1280px) 100vw, 500px"
+          alt="descriptive text"
+        />
       </div>
       <div class="carousel-item">
-        <Image src={gallaryImage} alt="Burger" width={600} />
+        <Picture
+          src={gallaryImage}
+          aspectRatio="1:1"
+          widths={[100, 300, 500]}
+          sizes="(max-width: 1280px) 100vw, 500px"
+          alt="descriptive text"
+        />
       </div>
       <div class="carousel-item">
-        <Image src={gallaryImage} alt="Burger" width={600} />
+        <Picture
+          src={gallaryImage}
+          aspectRatio="1:1"
+          widths={[100, 300, 500]}
+          sizes="(max-width: 1280px) 100vw, 500px"
+          alt="descriptive text"
+        />
       </div>
       <div class="carousel-item">
-        <Image src={gallaryImage} alt="Burger" width={600} />
+        <Picture
+          src={gallaryImage}
+          aspectRatio="1:1"
+          widths={[100, 300, 500]}
+          sizes="(max-width: 1280px) 100vw, 500px"
+          alt="descriptive text"
+        />
       </div>
       <div class="carousel-item">
-        <Image src={gallaryImage} alt="Burger" width={600} />
+        <Picture
+          src={gallaryImage}
+          aspectRatio="1:1"
+          widths={[100, 300, 500]}
+          sizes="(max-width: 1280px) 100vw, 500px"
+          alt="descriptive text"
+        />
       </div>
     </div>
   </div>
