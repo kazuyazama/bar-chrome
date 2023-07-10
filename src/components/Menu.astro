@@ -9,9 +9,14 @@ import SectionTitle from "./SectionTitle.astro";
 <section class="" id="Menu">
   <div class="mx-auto max-w-screen-2xl">
     <div class="grid -scroll-my-10 gap-10 pt-24 lg:gap-20">
-      <SectionTitle class="flex justify-start pl-6 text-accent/30">
-        Menu
-      </SectionTitle>
+      <div class="flex flex-col justify-start px-6">
+        <SectionTitle class="text-accent/30">Menu</SectionTitle>
+
+        <p class="lg:text-lg">
+          当店では種類豊富なウイスキーを中心に、幅広くご用意。<br />
+          ウィスキー・ワイン・カクテルなどからお選びいただけます。お酒に詳しくない方も、お好みの味やお酒のタイプを伝えてくだされば、最適な一杯をご提案いたします。
+        </p>
+      </div>
 
       <MenuCard menuImage={whiskeyImage} order title="Whiskey" />
       <MenuCard menuImage={cocketailImage} title="Cocktail" />

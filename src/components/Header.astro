@@ -1,4 +1,6 @@
 ---
+import { Image, Picture } from "@astrojs/image/components";
+import logo from "../assets/Bar Chrome.svg";
 const navItems = ["About", "Floor", "Menu", "Access", "Gallary"];
 ---
 
@@ -30,7 +32,9 @@ const navItems = ["About", "Floor", "Menu", "Access", "Gallary"];
     <!-- Navbar -->
     <nav class="navbar h-full w-full p-0">
       <h1 class="ml-6 flex-1 font-montserrat text-2xl text-neutral">
-        <a href="#Home">Bar chrome</a>
+        <a href="#Home">
+          <Image src={logo} width={50} height={50} alt="logo" class="w-2/3" />
+        </a>
       </h1>
 
       <div class="h-full flex-none bg-accent lg:hidden">
@@ -92,7 +96,15 @@ const navItems = ["About", "Floor", "Menu", "Access", "Gallary"];
     <label for="my-drawer-3" class="drawer-overlay"></label>
     <div class="h-full w-80 rounded-none bg-primary p-4 text-center">
       <a href="#Home">
-        <h2 class="pb-6 font-montserrat text-2xl">Bar Chrome</h2>
+        <h2 class="pb-6 font-montserrat text-2xl text-neutral">
+          <Image
+            src={logo}
+            width={50}
+            height={50}
+            alt="logo"
+            class="mx-auto w-2/3"
+          />
+        </h2>
       </a>
       <ul
         class="my-auto flex flex-col text-center font-montserrat text-neutral"
