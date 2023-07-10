@@ -104,14 +104,12 @@ const navItems = ["About", "Floor", "Menu", "Access", "Gallary"];
   </div>
 </div>
 
-<script>
+<script defer>
   //navItemsをクリックしたら、ドロワーが閉じる実装
 
   const hamburgerButton = document.getElementById("hamburgerButton");
-  const drawerMenu = document.getElementById("my-drawer-3") as HTMLInputElement; //ドロワー本体
-  const liNavItems = document.querySelectorAll(
-    "#liItem"
-  ) as NodeListOf<HTMLLIElement>; //navItems
+  const drawerMenu = document.getElementById("my-drawer-3"); //ドロワー本体
+  const liNavItems = document.querySelectorAll("#liItem"); //navItems
 
   hamburgerButton?.addEventListener("click", function () {
     if (drawerMenu.checked) {
