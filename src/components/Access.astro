@@ -1,96 +1,19 @@
 ---
+import GoogleMap from "./GoogleMap.astro";
 import SectionTitle from "./SectionTitle.astro";
-
-const shopDatas = [
-  {
-    dt: "営業時間",
-    dd: "月～土曜日　21:00〜翌4:00",
-  },
-  {
-    dt: "定休日",
-    dd: "日曜日",
-  },
-  {
-    dt: "客席数",
-    dd: "カウンター席　10席",
-  },
-  {
-    dt: "決済方法",
-    dd: "各種クレジットカード、PayPay",
-  },
-  {
-    dt: "その他",
-    dd: "予約可（1名様から）、貸し切り可、\n全席喫煙可",
-  },
-  {
-    dt: "アクセス",
-    dd: "JR町田駅から徒歩10分",
-  },
-];
+import AccessCard from "./AccessCard.astro";
 ---
 
 <section class="py-24" id="Access">
   <div class="mx-auto max-w-screen-2xl">
-    <SectionTitle id="right" class="flex justify-end pb-16 pr-6 text-accent/30">
+    <SectionTitle class="flex justify-end pb-16 pr-6 text-accent/30">
       Access
     </SectionTitle>
 
-    <div class="hero bg-access-image-svg lg:h-[500px]">
-      <div class="hero-overlay bg-opacity-30"></div>
-      <div
-        class="grid h-full w-full justify-between gap-6 px-6 py-6 text-white lg:grid-cols-2 lg:gap-20 lg:py-10"
-      >
-        <div class="flex h-full flex-col">
-          <div class="flex-1 lg:pt-10">
-            <dl class="grid gap-4">
-              <dt class="font-montserrat text-2xl">
-                Bar Chrome（バー クローム）
-              </dt>
-              <dd class="text-lg">
-                〒194-0013 東京都町田市soa-ve1F 612 原町田
-              </dd>
-            </dl>
-          </div>
-          <div
-            class="mt-6 grid w-full flex-none place-items-center bg-white/60 p-6 text-center text-black lg:mt-0"
-          >
-            <dl class="grid gap-7">
-              <dt class="text-xl">ご予約・お問い合わせ</dt>
-              <dd class="font-montserrat text-3xl">070-4419-3000</dd>
-            </dl>
-          </div>
-        </div>
-
-        <div class="bg-white/60 p-6 text-black">
-          <ul class="my-auto flex h-full flex-col justify-around">
-            {
-              shopDatas.map((shop) => (
-                <li class="  border-b border-accent py-4 first:border-t">
-                  <dl class="flex flex-col items-start gap-2 lg:flex-row  lg:items-center lg:gap-5">
-                    <dt class=" w-24 text-start lg:text-center">{shop.dt}</dt>
-                    <dd class=" whitespace-pre-line lg:whitespace-normal">
-                      {shop.dd}
-                    </dd>
-                  </dl>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
-    </div>
+    <AccessCard />
 
     <div class="px-6 pt-20 lg:px-0">
-      <figure class="mx-auto flex flex-col items-center gap-6 lg:w-[1200px]">
-        <figcaption class="self-start font-montserrat text-2xl">
-          GoogleMap
-        </figcaption>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.5524899741863!2d139.44848227641228!3d35.54005503771531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f935ef875ea9%3A0x8fd1f54c56c767c!2sBar%20Chrome!5e0!3m2!1sja!2sjp!4v1688550675807!5m2!1sja!2sjp"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          class="h-80 w-full lg:block lg:h-[600px]"></iframe>
-      </figure>
+      <GoogleMap />
     </div>
   </div>
 </section>

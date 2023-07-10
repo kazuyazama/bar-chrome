@@ -1,0 +1,36 @@
+<figure
+  class="mx-auto flex flex-col items-center gap-6 lg:w-[1200px]"
+  id="googleMap"
+>
+  <figcaption class="self-start font-montserrat text-2xl font-bold">
+    GoogleMap
+  </figcaption>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.5524899741863!2d139.44848227641228!3d35.54005503771531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f935ef875ea9%3A0x8fd1f54c56c767c!2sBar%20Chrome!5e0!3m2!1sja!2sjp!4v1688550675807!5m2!1sja!2sjp"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    class="h-80 w-full lg:block lg:h-[600px]"></iframe>
+</figure>
+
+<script>
+  //scrollobserver
+
+  const handleIntersection = (
+    entries: IntersectionObserverEntry[],
+    observer: IntersectionObserver
+  ) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target as HTMLElement;
+        target.classList.add("animate-fade-in");
+        observer.unobserve(target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    threshold: 0,
+  });
+  const element = document.getElementById("googleMap");
+  element && observer.observe(element);
+</script>

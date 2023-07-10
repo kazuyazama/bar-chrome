@@ -1,0 +1,27 @@
+---
+import { Picture } from "@astrojs/image/components";
+const { src, aspectRatio, widths, sizes, alt, class: clasName } = Astro.props;
+
+type Props = {
+  src: string;
+  aspectRatio: `${number}:${number}`;
+  widths: number[];
+  sizes: string;
+  alt: string;
+  class?: string;
+};
+---
+
+<astro-custom-picture data-alt={alt}>
+  <Picture
+    src={src}
+    aspectRatio={aspectRatio}
+    widths={widths}
+    sizes={sizes}
+    alt={alt}
+    class:list={[clasName]}
+    id={alt}
+  />
+</astro-custom-picture>
+
+<script src="../scripts/customPicture.ts"></script>

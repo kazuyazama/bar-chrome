@@ -10,7 +10,7 @@ type Props = {
 const { menuImage, order, title, notMenu } = Astro.props;
 ---
 
-<figure class="flex flex-col gap-3 bg-secondary lg:flex-row">
+<figure class="flex flex-col gap-3 bg-secondary lg:flex-row" id="menuCard">
   <Picture
     src={menuImage}
     aspectRatio="16:9"
@@ -37,8 +37,36 @@ const { menuImage, order, title, notMenu } = Astro.props;
           ))}
         </ul>
       ) : (
-        <p class="py-4 lg:text-xl">おつまみは無料です！様々なスナック菓子をご用意しております。</p>
+        <p class="py-4 lg:text-xl">
+          おつまみは無料です！様々なスナック菓子をご用意しております。
+        </p>
       )
     }
   </figcaption>
 </figure>
+
+<script>
+  //scrollobserver
+
+  const handleIntersection = (
+    entries: IntersectionObserverEntry[],
+    observer: IntersectionObserver
+  ) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target as HTMLElement;
+
+        target.classList.add("animate-fade-in-bottom");
+        observer.unobserve(target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    threshold: 0,
+  });
+  const elements = document.querySelectorAll(`#menuCard`);
+  elements.forEach((element) => {
+    element && observer.observe(element);
+  });
+</script>

@@ -1,57 +1,42 @@
 ---
-const { class: className, id } = Astro.props;
+const { class: className } = Astro.props;
 type Props = {
   class: string;
-  id: string;
 };
 ---
 
-<astro-section-title data-id={id}>
-  <h2
-    id={id}
-    class:list={[
-      className,
-      " font-montserrat text-[64px] lg:text-[160px] font-bold opacity-0  ",
-    ]}
-  >
-    <slot />
-  </h2>
-</astro-section-title>
+<h2
+  id="sectionTitle"
+  class:list={[
+    className,
+    " font-montserrat text-[64px] lg:text-[160px] font-bold opacity-0  ",
+  ]}
+>
+  <slot />
+</h2>
 
 <script>
   //scrollobserver
 
-  class AstroGreet extends HTMLElement {
-    constructor() {
-      super();
+  const handleIntersection = (
+    entries: IntersectionObserverEntry[],
+    observer: IntersectionObserver
+  ) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target as HTMLElement;
 
-      const id = this.dataset.id;
-
-      const handleIntersection = (
-        entries: IntersectionObserverEntry[],
-        observer: IntersectionObserver
-      ) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const target = entry.target as HTMLElement;
-
-            target.classList.add(
-              id === "left" ? "animate-fade-in-left" : "animate-fade-in-right"
-            );
-            observer.unobserve(target);
-          }
-        });
-      };
-      const observer = new IntersectionObserver(handleIntersection, {
-        root: null,
-        threshold: 0,
-      });
-      const elements = document.querySelectorAll(`#${id}`);
-      elements.forEach((element) => {
-        element && observer.observe(element);
-      });
-    }
-  }
-
-  customElements.define("astro-section-title", AstroGreet);
+        target.classList.add("animate-fade-in-bottom");
+        observer.unobserve(target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    threshold: 0,
+  });
+  const elements = document.querySelectorAll(`#sectionTitle`);
+  elements.forEach((element) => {
+    element && observer.observe(element);
+  });
 </script>

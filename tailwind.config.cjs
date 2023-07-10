@@ -17,6 +17,9 @@ module.exports = {
           "fade-in-left 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000)   both",
         "fade-in-right":
           "fade-in-right 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000)   both",
+        "fade-in-bottom": "fade-in-bottom 1.2s ease-in-out   forwards",
+        "fade-in":
+          "fade-in 2.5s cubic-bezier(0.390, 0.575, 0.565, 1.000)   forwards",
       },
       keyframes: {
         "fade-in-left": {
@@ -39,6 +42,25 @@ module.exports = {
             opacity: "1",
           },
         },
+        "fade-in-bottom": {
+          "0%": {
+            transform: "translateY(50px)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+          },
+          to: {
+            opacity: "1",
+          },
+        },
+
         pathmove: {
           "0%": { height: 0, top: 0, opacity: 0 },
           "30%": {

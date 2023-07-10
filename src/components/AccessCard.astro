@@ -1,0 +1,94 @@
+---
+const shopDatas = [
+  {
+    dt: "営業時間",
+    dd: "月～土曜日　21:00〜翌4:00",
+  },
+  {
+    dt: "定休日",
+    dd: "日曜日",
+  },
+  {
+    dt: "客席数",
+    dd: "カウンター席　10席",
+  },
+  {
+    dt: "決済方法",
+    dd: "各種クレジットカード、PayPay",
+  },
+  {
+    dt: "その他",
+    dd: "予約可（1名様から）、貸し切り可、\n全席喫煙可",
+  },
+  {
+    dt: "アクセス",
+    dd: "JR町田駅から徒歩10分",
+  },
+];
+---
+
+<div class="hero bg-access-image-svg lg:h-[500px]" id="accessCard">
+  <div class="hero-overlay bg-opacity-30"></div>
+  <div
+    class="grid h-full w-full justify-between gap-6 px-6 py-6 text-white lg:grid-cols-2 lg:gap-20 lg:py-10"
+  >
+    <div class="flex h-full flex-col">
+      <div class="flex-1 lg:pt-10">
+        <dl class="grid gap-4">
+          <dt class="font-montserrat text-2xl font-bold">
+            Bar Chrome（バー クローム）
+          </dt>
+          <dd class="text-lg">〒194-0013 東京都町田市soa-ve1F 612 原町田</dd>
+        </dl>
+      </div>
+      <div
+        class="mt-6 grid w-full flex-none place-items-center bg-white/60 p-6 text-center text-black lg:mt-0"
+      >
+        <dl class="grid gap-7">
+          <dt class="text-xl">ご予約・お問い合わせ</dt>
+          <dd class="font-montserrat text-3xl">070-4419-3000</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="bg-white/60 p-6 text-black">
+      <ul class="my-auto flex h-full flex-col justify-around">
+        {
+          shopDatas.map((shop) => (
+            <li class="  border-b border-accent py-4 first:border-t">
+              <dl class="flex flex-col items-start gap-2 lg:flex-row  lg:items-center lg:gap-5">
+                <dt class=" w-24 text-start lg:text-center">{shop.dt}</dt>
+                <dd class=" whitespace-pre-line lg:whitespace-normal">
+                  {shop.dd}
+                </dd>
+              </dl>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  //scrollobserver
+
+  const handleIntersection = (
+    entries: IntersectionObserverEntry[],
+    observer: IntersectionObserver
+  ) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target as HTMLElement;
+        target.classList.add("animate-fade-in-bottom");
+        observer.unobserve(target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    threshold: 0,
+  });
+  const element = document.getElementById("accessCard");
+  element && observer.observe(element);
+</script>

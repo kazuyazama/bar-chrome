@@ -1,7 +1,7 @@
 ---
-import { Picture } from "@astrojs/image/components";
 import aboutImage from "../assets/cherry-laithang-EyUrlifbgv4-unsplash.jpg";
 import SectionTitle from "./SectionTitle.astro";
+import CustomPicture from "./CustomPicutre.astro";
 ---
 
 <section class="bg-secondary px-6 py-24" id="About">
@@ -9,19 +9,18 @@ import SectionTitle from "./SectionTitle.astro";
     <div class="relative flex flex-col justify-between lg:flex lg:flex-row">
       <div class="">
         <SectionTitle
-          id="left"
-          class="pb-8 text-accent/30 lg:absolute lg:left-0 lg:top-0 lg:pb-0"
+          class="z-20 pb-8 text-accent/30 lg:absolute lg:left-0 lg:top-0 lg:pb-0"
         >
           About Us
         </SectionTitle>
       </div>
 
-      <Picture
+      <CustomPicture
         src={aboutImage}
         aspectRatio="16:9"
         widths={[100, 300, 500]}
         sizes="(max-width: 1024px) 100vw,800px"
-        alt="descriptive text"
+        alt="aboutImage"
       />
     </div>
 
@@ -34,7 +33,7 @@ import SectionTitle from "./SectionTitle.astro";
         class="divider before:border-2 before:border-accent after:border-2 after:border-accent"
       ></span>
 
-      <p class="leading-6 lg:text-lg lg:leading-9">
+      <p class="leading-6 lg:text-xl lg:leading-9">
         Bar Choromeは大人で落ち着いた雰囲気の町田のカジュアルバーです！<br />
         2018年の開店以来、経験豊富なバーテンダーが作るカスタムカクテルで町田の皆さんをおもてなししてきました。<br
         />
