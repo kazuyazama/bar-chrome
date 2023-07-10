@@ -1,22 +1,63 @@
 ---
 import Divider from "./Divider.astro";
-const { title, class: clasName } = Astro.props;
+const { title, class: clasName, id } = Astro.props;
 
 type Props = {
   title: string;
   class: string;
+  id: string;
 } & astroHTML.JSX.SlotHTMLAttributes;
 ---
 
-<div
-  class:list={[
-    clasName,
-    "absolute  -bottom-[108px] lg:bottom-20 bg-white/50 p-6",
-  ]}
->
-  <h3 class="z-10 text-2xl lg:text-6xl">{title}</h3>
-  <Divider class="z-10 -mt-1 mb-2 lg:mb-4 lg:mt-0" />
-  <p class="z-10 lg:text-2xl">
-    <slot />
-  </p>
-</div>
+<astro-floor-card data-title={title}>
+  <div
+    id={id}
+    class:list={[
+      clasName,
+      "absolute  -bottom-[108px] lg:bottom-20 bg-white/50 p-6",
+    ]}
+  >
+    <h3 class="z-10 text-2xl lg:text-6xl">{title}</h3>
+    <Divider class="z-10 -mt-1 mb-2 lg:mb-4 lg:mt-0" />
+    <p class="z-10 lg:text-2xl">
+      <slot />
+    </p>
+  </div>
+</astro-floor-card>
+
+<script>
+  //scrollobserver
+
+  class AstroGreet extends HTMLElement {
+    constructor() {
+      super();
+
+      const title = this.dataset.title;
+
+      const handleIntersection = (
+        entries: IntersectionObserverEntry[],
+        observer: IntersectionObserver
+      ) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = entry.target as HTMLElement;
+            target.classList.add(
+              title === "Counter"
+                ? "animate-fade-in-left"
+                : "animate-fade-in-right"
+            );
+            observer.unobserve(target);
+          }
+        });
+      };
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        threshold: 0,
+      });
+      const element = document.getElementById(title as string);
+      element && observer.observe(element);
+    }
+  }
+
+  customElements.define("astro-floor-card", AstroGreet);
+</script>

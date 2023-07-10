@@ -11,18 +11,42 @@ module.exports = {
         "access-image": "url('/src/assets/Frame116.webp')",
         "access-image-svg": "url('/src/assets/Frame 116.svg')",
       },
-      keyframes: {
-        pathmove: {
-          "0%": { height: 0, top: 0, opacity: 0 },
-          "30%":{
-            height:"40px",
-            opacity: 1
-          },
-          "100%":{height:0,top:"60px",opacity: 0},
-        },
-      },
       animation: {
         "scroll-down": "pathmove 1.4s ease-in-out infinite",
+        "fade-in-left":
+          "fade-in-left 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000)   both",
+        "fade-in-right":
+          "fade-in-right 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000)   both",
+      },
+      keyframes: {
+        "fade-in-left": {
+          "0%": {
+            transform: "translateX(-50px)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
+        "fade-in-right": {
+          "0%": {
+            transform: "translateX(50px)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
+        pathmove: {
+          "0%": { height: 0, top: 0, opacity: 0 },
+          "30%": {
+            height: "40px",
+            opacity: 1,
+          },
+          "100%": { height: 0, top: "60px", opacity: 0 },
+        },
       },
     },
   },

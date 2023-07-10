@@ -8,7 +8,7 @@ import { Picture } from "@astrojs/image/components";
 
 <section class="pb-16 pt-24" id="Floor">
   <div class="mx-auto max-w-screen-2xl">
-    <SectionTitle class="flex justify-end pb-16 pr-6 text-accent/30">
+    <SectionTitle id="right" class="flex justify-end pb-16 pr-6 text-accent/30">
       Floor
     </SectionTitle>
 
@@ -21,7 +21,7 @@ import { Picture } from "@astrojs/image/components";
           sizes="(max-width: 1024px) 100vw ,1000px"
           alt="counterImage"
         />
-        <FloorCard title="Counter" class="right-0 lg:right-32">
+        <FloorCard title="Counter" class="right-0 lg:right-32" id="Counter"  >
           バー好きにも大好評の隠れ家です。<br
           />都会の喧騒を忘れ、落ち着いて飲めます
         </FloorCard>
@@ -35,7 +35,7 @@ import { Picture } from "@astrojs/image/components";
           sizes="(max-width: 1024px) 100vw ,1000px"
           alt="entranceImage"
         />
-        <FloorCard title="Entrance" class="left-0 lg:left-32">
+        <FloorCard title="Entrance" class="left-0 lg:left-32" id="Entrance" >
           入り口からは少し暗く見えますが <br
           />ここを抜けると、カウンターが現れます。
         </FloorCard>
