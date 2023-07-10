@@ -1,20 +1,3 @@
-<script>
-  //一定以上スクロールしたら出現し、ページTopに戻る実装
-  const scrollTopButton = document.getElementById("scrollTopButton");
-  const classes = ["invisible", "opacity-0"];
-
-  window.addEventListener("scroll", () => {
-    const threshold = 600; // px
-
-    const method = window.scrollY > threshold ? "remove" : "add";
-    scrollTopButton?.classList[method](...classes);
-  });
-
-  scrollTopButton?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
-
 <div
   id="scrollTopButton"
   class="invisible fixed bottom-6 right-6 z-40 my-auto grid h-16 w-16 cursor-pointer place-items-center rounded-sm bg-accent p-2 text-white opacity-0 lg:h-20 lg:w-20"
@@ -37,3 +20,20 @@
 
   <span class="whitespace-nowrap text-[1px] lg:text-xs">PAGE TOP</span>
 </div>
+
+<script defer>
+  //一定以上スクロールしたら出現し、ページTopに戻る実装
+  const scrollTopButton = document.getElementById("scrollTopButton");
+  const classes = ["invisible", "opacity-0"];
+
+  window.addEventListener("scroll", () => {
+    const threshold = 600; // px
+
+    const method = window.scrollY > threshold ? "remove" : "add";
+    scrollTopButton?.classList[method](...classes);
+  });
+
+  scrollTopButton?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
