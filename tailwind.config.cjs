@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "access-image": "url('/src/assets/Frame116.webp')",
+        "access-image-svg": "url('/src/assets/Frame 116.svg')",
       },
       keyframes: {
         pathmove: {
