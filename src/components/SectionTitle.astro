@@ -16,27 +16,6 @@ type Props = {
 </h2>
 
 <script>
-  //scrollobserver
-
-  const handleIntersection = (
-    entries: IntersectionObserverEntry[],
-    observer: IntersectionObserver
-  ) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const target = entry.target as HTMLElement;
-
-        target.classList.add("animate-fade-in-bottom");
-        observer.unobserve(target);
-      }
-    });
-  };
-  const observer = new IntersectionObserver(handleIntersection, {
-    root: null,
-    threshold: 0,
-  });
-  const elements = document.querySelectorAll(`#sectionTitle`);
-  elements.forEach((element) => {
-    element && observer.observe(element);
-  });
+  import { scrollobserver } from "../scripts/scrollObserver";
+  scrollobserver("#sectionTitle", "animate-fade-in-bottom");
 </script>

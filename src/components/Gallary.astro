@@ -13,7 +13,7 @@ import CustomPicture from "./CustomPicture.astro";
 
     <section class="splide" aria-label="carousel">
       <div class="splide__track">
-        <ul class="splide__list" id="carousel">
+        <ul class="splide__list">
           {
             new Array(6).fill(null).map((_, index) => (
               <li class="splide__slide">
@@ -22,7 +22,7 @@ import CustomPicture from "./CustomPicture.astro";
                   aspectRatio="1:1"
                   widths={[200, 400, 800]}
                   sizes="(max-width: 1024px) 100vw, 500px"
-                  alt={"descriptive text" + index}
+                  alt={"gallaryImage" + index}
                 />
               </li>
             ))
@@ -33,8 +33,6 @@ import CustomPicture from "./CustomPicture.astro";
 
     <script>
       import Splide from "@splidejs/splide";
-      import { scrollObserver } from "../scripts/scrollObserver";
-
       document.addEventListener("DOMContentLoaded", () => {
         const splide = new Splide(".splide", {
           type: "loop",
