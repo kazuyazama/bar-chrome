@@ -14,24 +14,6 @@
 </figure>
 
 <script>
-  //scrollobserver
-
-  const handleIntersection = (
-    entries: IntersectionObserverEntry[],
-    observer: IntersectionObserver
-  ) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const target = entry.target as HTMLElement;
-        target.classList.add("animate-fade-in");
-        observer.unobserve(target);
-      }
-    });
-  };
-  const observer = new IntersectionObserver(handleIntersection, {
-    root: null,
-    threshold: 0,
-  });
-  const element = document.getElementById("googleMap");
-  element && observer.observe(element);
+  import { scrollobserver } from "../scripts/scrollObserver";
+  scrollobserver("#googleMap", "animate-fade-in");
 </script>

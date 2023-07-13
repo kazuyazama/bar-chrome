@@ -32,7 +32,7 @@ const shopDatas = [
   <div
     class="flex h-full w-full flex-col justify-between gap-6 px-6 py-6 text-white lg:flex-row lg:gap-20 lg:py-10"
   >
-    <div class="flex w-full h-full flex-col">
+    <div class="flex h-full w-full flex-col">
       <div class="flex-1 lg:pt-10">
         <dl class="grid gap-4">
           <dt class="font-montserrat text-2xl font-bold">
@@ -51,7 +51,7 @@ const shopDatas = [
       </div>
     </div>
 
-    <div class="bg-white/60 p-6 text-black w-full">
+    <div class="w-full bg-white/60 p-6 text-black">
       <ul class="my-auto flex h-full flex-col justify-around">
         {
           shopDatas.map((shop) => (
@@ -71,24 +71,6 @@ const shopDatas = [
 </div>
 
 <script>
-  //scrollobserver
-
-  const handleIntersection = (
-    entries: IntersectionObserverEntry[],
-    observer: IntersectionObserver
-  ) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const target = entry.target as HTMLElement;
-        target.classList.add("animate-fade-in-bottom");
-        observer.unobserve(target);
-      }
-    });
-  };
-  const observer = new IntersectionObserver(handleIntersection, {
-    root: null,
-    threshold: 0,
-  });
-  const element = document.getElementById("accessCard");
-  element && observer.observe(element);
+  import { scrollobserver } from "../scripts/scrollObserver";
+  scrollobserver("#accessCard", "animate-fade-in-bottom");
 </script>
