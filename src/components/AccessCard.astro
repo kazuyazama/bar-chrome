@@ -2,11 +2,11 @@
 const shopDatas = [
   {
     dt: "営業時間",
-    dd: "月～土曜日　21:00〜翌4:00",
+    dd: "火曜,金曜　21:00〜翌4:00",
   },
   {
     dt: "定休日",
-    dd: "日曜日",
+    dd: "不定休",
   },
   {
     dt: "客席数",
@@ -36,9 +36,12 @@ const shopDatas = [
       <div class="flex-1 lg:pt-10">
         <dl class="grid gap-4">
           <dt class="font-montserrat text-2xl font-bold">
-            Bar Chrome（バー クローム）
+            Bar Chrome
+            <span class="text-xl">（バー クローム）</span>
           </dt>
-          <dd class="text-lg">〒194-0013 東京都町田市soa-ve1F 612 原町田</dd>
+          <dd class="text-lg">
+            〒194-0013 <br class="lg:hidden" />東京都町田市原町田2-1-6 soa-ve 1F
+          </dd>
         </dl>
       </div>
       <div
@@ -46,7 +49,9 @@ const shopDatas = [
       >
         <dl class="grid gap-7">
           <dt class="text-xl">ご予約・お問い合わせ</dt>
-          <dd class="font-montserrat text-3xl">070-4419-3000</dd>
+          <dd class="font-montserrat text-3xl">
+            <a href="tel:070-4419-3000">070-4419-3000</a>
+          </dd>
         </dl>
       </div>
     </div>
