@@ -1,8 +1,11 @@
 ---
 import "@splidejs/splide/css";
-import gallaryImage from "../assets/Frame 109 (1).png";
+import gallaryImage from "../assets/IMG_0505.jpg";
+import gallaryImage2 from "../assets/IMG_0508.jpg";
+import gallaryImage3 from "../assets/IMG_0507.jpg";
 import SectionTitle from "./SectionTitle.astro";
 import CustomPicture from "./CustomPicture.astro";
+const gallaryImages = [gallaryImage, gallaryImage2, gallaryImage3];
 ---
 
 <section class="bg-secondary px-6 py-24" id="Gallary">
@@ -15,7 +18,7 @@ import CustomPicture from "./CustomPicture.astro";
       <div class="splide__track">
         <ul class="splide__list">
           {
-            new Array(6).fill(null).map((_, index) => (
+            gallaryImages.map((gallaryImage, index) => (
               <li class="splide__slide">
                 <CustomPicture
                   src={gallaryImage}
