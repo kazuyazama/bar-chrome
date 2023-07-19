@@ -14,7 +14,7 @@ const shopDatas = [
   },
   {
     dt: "決済方法",
-    dd: "各種クレジットカード、PayPay",
+    dd: "現金のみ",
   },
   {
     dt: "その他",
@@ -62,7 +62,9 @@ const shopDatas = [
           shopDatas.map((shop) => (
             <li class="  border-b border-accent py-4 first:border-t">
               <dl class="flex flex-col items-start gap-2 lg:flex-row  lg:items-center lg:gap-5">
-                <dt class=" w-24 text-start lg:text-center font-semibold">{shop.dt}</dt>
+                <dt class=" w-24 text-start font-semibold lg:text-center">
+                  {shop.dt}
+                </dt>
                 <dd class=" whitespace-pre-line lg:whitespace-normal">
                   {shop.dd}
                 </dd>
