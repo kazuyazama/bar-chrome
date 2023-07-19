@@ -1,13 +1,21 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import Divider from "./Divider.astro";
+
+type Menus = {
+  label: string;
+  price?: number;
+  text?: string;
+};
 type Props = {
   menuImage: string;
   order?: boolean;
   title: string;
   notMenu?: boolean;
+  menus: Menus[];
 };
-const { menuImage, order, title, notMenu } = Astro.props;
+const { menuImage, order, title, notMenu, menus } = Astro.props;
+const winePriceLabel = title === "Wine" ? "円〜" : "円";
 ---
 
 <figure class="flex flex-col gap-3 bg-secondary lg:flex-row" id="menuCard">
@@ -27,11 +35,15 @@ const { menuImage, order, title, notMenu } = Astro.props;
     {
       !notMenu ? (
         <ul>
-          {new Array(4).fill(null).map((_, i) => (
+          {menus?.map((menu) => (
             <li class="w-full border-b border-accent py-4">
               <dl class="flex w-full items-center justify-between">
-                <dt>menu{i + 1}</dt>
-                <dd>￥1,200</dd>
+                <dt>{menu.label}</dt>
+                <dd>
+                  {menu.price
+                    ? menu.price.toLocaleString() + winePriceLabel
+                    : menu.text}
+                </dd>
               </dl>
             </li>
           ))}
@@ -44,6 +56,8 @@ const { menuImage, order, title, notMenu } = Astro.props;
     }
   </figcaption>
 </figure>
+
+<div></div>
 
 <script>
   import { scrollobserver } from "../scripts/scrollObserver";

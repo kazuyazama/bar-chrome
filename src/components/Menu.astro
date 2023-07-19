@@ -5,6 +5,36 @@ import whiskeyImage from "../assets/Frame 109.png";
 import wineImage from "../assets/Frame 109 (2).png";
 import MenuCard from "./MenuCard.astro";
 import SectionTitle from "./SectionTitle.astro";
+const wiskey = [
+  { label: "IWハーパー12年", price: 1000 },
+  { label: "マリカラン12年", price: 1100 },
+  { label: "知多", price: 900 },
+  { label: "ジャックダニエル", price: 800 },
+];
+const cocketail = [
+  { label: "ジントニック", price: 800 },
+  { label: "モスコミュール", price: 800 },
+  { label: "テキーラサンライズ", price: 800 },
+  { label: "ラムコーク", price: 800 },
+];
+
+const wine = [
+  {
+    label: "ハウスワイン 赤白",
+    price: 700,
+  },
+  {
+    label: "ボトルワイン",
+    text: "取り揃えています",
+  },
+];
+
+const beer = [
+  { label: "コロナ", price: 800 },
+  { label: "ビックウェーブ", price: 900 },
+  { label: "ハートランド", price: 800 },
+  { label: "ハイネケン", price: 700 },
+];
 ---
 
 <section class="" id="Menu">
@@ -19,10 +49,11 @@ import SectionTitle from "./SectionTitle.astro";
         </p>
       </div>
 
-      <MenuCard menuImage={whiskeyImage} order title="Whiskey" />
-      <MenuCard menuImage={cocketailImage} title="Cocktail" />
-      <MenuCard menuImage={wineImage} order title="Wine" />
-      <MenuCard menuImage={foodImage} notMenu title="Food" />
+      <MenuCard menuImage={whiskeyImage} menus={wiskey} order title="Whiskey" />
+      <MenuCard menuImage={cocketailImage} menus={cocketail} title="Cocktail" />
+      <MenuCard menuImage={wineImage} menus={wine} order title="Wine" />
+      <MenuCard menuImage={wineImage} menus={beer} title="Beer" />
+      <MenuCard menuImage={foodImage} menus={beer} order notMenu title="Food" />
     </div>
   </div>
 </section>
