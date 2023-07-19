@@ -12,7 +12,7 @@ type Props = {
   order?: boolean;
   title: string;
   notMenu?: boolean;
-  menus: Menus[];
+  menus?: Menus[];
 };
 const { menuImage, order, title, notMenu, menus } = Astro.props;
 const winePriceLabel = title === "Wine" ? "円〜" : "円";
@@ -30,7 +30,11 @@ const winePriceLabel = title === "Wine" ? "円〜" : "円";
   <figcaption
     class:list={[order && " order-last lg:order-first ", "basis-2/3 p-6 "]}
   >
-    <h2 class="text-2xl lg:text-6xl">{title}</h2>
+    <div class="flex justify-between items-end">
+      <h2 class="text-2xl lg:text-6xl">{title}</h2>
+      <span class=" text-xs font-semibold">※下記は一部商品です</span>
+    </div>
+
     <Divider class="mb-0" />
     {
       !notMenu ? (
@@ -56,8 +60,6 @@ const winePriceLabel = title === "Wine" ? "円〜" : "円";
     }
   </figcaption>
 </figure>
-
-<div></div>
 
 <script>
   import { scrollobserver } from "../scripts/scrollObserver";
