@@ -11,7 +11,7 @@ const canonicalURL = new URL(
   Astro.url.pathname,
   "https://bar-chrome.vercel.app/"
 );
-const ogpImageURL = new URL("../assets/IMG_0506.jpg", canonicalURL);
+const ogpImageURL = new URL(metaImage, canonicalURL);
 ---
 
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ const ogpImageURL = new URL("../assets/IMG_0506.jpg", canonicalURL);
     <meta property="og:image" content={ogpImageURL} />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="../assets/IMG_0506.jpg" />
+    <meta property="twitter:card" content={ogpImageURL} />
     <meta property="twitter:url" content={canonicalURL.href} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
