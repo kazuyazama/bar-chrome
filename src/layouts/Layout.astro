@@ -7,6 +7,11 @@ import metaImage from "../assets/IMG_0506.jpg";
 const title = "Bar Chrome";
 const description =
   "Bar Choromeは大人で落ち着いた雰囲気の町田のカジュアルバーです！2018年の開店以来、経験豊富なバーテンダーが作るカスタムカクテルで町田の皆さんをおもてなししてきました。Chromeは新しい出会いと思い出を作る場所です。初めての方も大歓迎ですのでお気軽にご来店お待ちしています。";
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  "https://bar-chrome.vercel.app/"
+);
+const ogpImageURL = new URL("../assets/IMG_0506.jpg", canonicalURL);
 ---
 
 <!DOCTYPE html>
@@ -26,19 +31,17 @@ const description =
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bar-chrome.vercel.app/" />
+    <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={metaImage} />
+    <meta property="og:image" content={ogpImageURL} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="../assets/IMG_0506.jpg" />
-    <meta property="twitter:url" content="https://bar-chrome.vercel.app/" />
+    <meta property="twitter:url" content={canonicalURL.href} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={metaImage} />
-
-    <!-- Meta Tags Generated with https://metatags.io -->
+    <meta property="twitter:image" content={ogpImageURL} />
   </head>
 
   <body class="bg-primary">
