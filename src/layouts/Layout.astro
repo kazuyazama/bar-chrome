@@ -3,10 +3,6 @@ import "@fontsource-variable/roboto-flex";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import PageTop from "../components/PageTop.astro";
-type Props = {
-  title: string;
-};
-const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,8 +14,50 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="../assets/Frame116.webp" as="image" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <!-- Primary Meta Tags -->
+    <title>Bar Chrome</title>
+    <meta name="title" content="Bar Chrome" />
+    <meta
+      name="description"
+      content="Bar Choromeは大人で落ち着いた雰囲気の町田のカジュアルバーです！
+2018年の開店以来、経験豊富なバーテンダーが作るカスタムカクテルで町田の皆さんをおもてなししてきました。
+Chromeは新しい出会いと思い出を作る場所です。初めての方も大歓迎ですのでお気軽にご来店お待ちしています。"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bar-chrome.vercel.app/" />
+    <meta property="og:title" content="Bar Chrome" />
+    <meta
+      property="og:description"
+      content="Bar Choromeは大人で落ち着いた雰囲気の町田のカジュアルバーです！
+2018年の開店以来、経験豊富なバーテンダーが作るカスタムカクテルで町田の皆さんをおもてなししてきました。
+Chromeは新しい出会いと思い出を作る場所です。初めての方も大歓迎ですのでお気軽にご来店お待ちしています。"
+    />
+    <meta
+      property="og:image"
+      content="https://metatags.io/images/meta-tags.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bar-chrome.vercel.app/" />
+    <meta property="twitter:title" content="Bar Chrome" />
+    <meta
+      property="twitter:description"
+      content="Bar Choromeは大人で落ち着いた雰囲気の町田のカジュアルバーです！
+2018年の開店以来、経験豊富なバーテンダーが作るカスタムカクテルで町田の皆さんをおもてなししてきました。
+Chromeは新しい出会いと思い出を作る場所です。初めての方も大歓迎ですのでお気軽にご来店お待ちしています。"
+    />
+    <meta
+      property="twitter:image"
+      content="https://metatags.io/images/meta-tags.png"
+    />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
   </head>
+
   <body class="bg-primary">
     <Header />
     <PageTop />
