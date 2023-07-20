@@ -3,7 +3,6 @@ import "@fontsource-variable/roboto-flex";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import PageTop from "../components/PageTop.astro";
-import metaImage from "../assets/IMG_0506.jpg";
 const title = "Bar Chrome";
 const description =
   "Bar Choromeは大人で落ち着いた雰囲気の町田のカジュアルバーです！2018年の開店以来、経験豊富なバーテンダーが作るカスタムカクテルで町田の皆さんをおもてなししてきました。Chromeは新しい出会いと思い出を作る場所です。初めての方も大歓迎ですのでお気軽にご来店お待ちしています。";
@@ -11,7 +10,7 @@ const canonicalURL = new URL(
   Astro.url.pathname,
   "https://bar-chrome.vercel.app/"
 );
-const ogpImageURL = new URL(metaImage, canonicalURL);
+const ogpImageURL = new URL("/IMG_0506.jpg", canonicalURL);
 ---
 
 <!DOCTYPE html>
