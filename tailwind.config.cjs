@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       roboto: ["Roboto Flex Variable", "sans-serif"],
       montserrat: ["montserrat Variable", "sans-serif"],
+      moonDance:["Moon Dance", "sans-serif"]
     },
     extend: {
       backgroundImage: {

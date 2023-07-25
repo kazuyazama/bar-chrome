@@ -1,6 +1,7 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import Divider from "./Divider.astro";
+import '@fontsource-variable/montserrat';
 
 type Menus = {
   label: string;
@@ -31,7 +32,7 @@ const winePriceLabel = title === "Wine" ? "円〜" : "円";
     class:list={[order && " order-last lg:order-first ", "basis-2/3 p-6 "]}
   >
     <div class="flex justify-between items-end">
-      <h2 class="text-2xl lg:text-6xl">{title}</h2>
+      <h2 class="text-2xl lg:text-6xl font-montserrat">{title}</h2>
       <span class=" text-xs font-semibold">※下記は一部商品です</span>
     </div>
 
