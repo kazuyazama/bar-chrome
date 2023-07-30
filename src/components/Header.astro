@@ -1,6 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
-import logo from "../assets/Bar Chrome.svg";
+import logo from "../assets/BarChrome.svg";
 const navItems = ["About", "Floor", "Menu", "Access", "Gallary"];
 ---
 
@@ -11,7 +11,13 @@ const navItems = ["About", "Floor", "Menu", "Access", "Gallary"];
     <nav class="navbar h-full w-full p-0">
       <h1 class="ml-6 flex-1 font-montserrat text-2xl text-neutral">
         <a href="#Home">
-          <Image src={logo} width={50} height={50} alt="logo" class="w-2/3" />
+          <Image
+            src={logo}
+            width={150}
+            height={150}
+            alt="logo"
+            class="scale-110"
+          />
         </a>
       </h1>
 
